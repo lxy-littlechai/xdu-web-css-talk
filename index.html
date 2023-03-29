@@ -16,12 +16,21 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
+				<section>
+					<h1>CSS Introduction</h1>
+					<p>Page: https://lxy-littlechai.github.io/xdu-web-css-talk/</p>
+				</section>
+
 <!-- CSS Video Introduction -->
-				<section data-markdown>
-			  <script type="text/template">
-		    # What's CSS?
-		    Let's watch a video
-			  </script>
+				<section>
+					<section>
+						<h1>What's CSS?</h1>
+		    		Let's watch a video
+					</section>
+		    	<section>
+						<iframe style="height: 500px;width: 1000px;" src="//player.bilibili.com/player.html?aid=421517456&bvid=BV1F3411C7Pi&cid=437849190&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+					</section>
 				</section>
 
 <!-- CSS的引入方式 -->
@@ -191,7 +200,7 @@
 							<p style="
 							font-size: 25px;
 							font-weight: 600;
-							font-style: italic;">CSS字体属性</p>
+							font-style: italic;">Font 字体属性</p>
 							<pre><code>
 								<style>
 									p {
@@ -214,7 +223,7 @@
 									text-decoration: underline;
 									text-indent: 10px;
 									line-height: 10px;
-						">CSS文本属性</p>
+						">Text 文本属性</p>
 						<pre><code>
 							<style>
 								p {
@@ -237,7 +246,7 @@
 									background-repeat: no-repeat;
 									background-position: 0 0;
 					">
-						<p>CSS背景</p>
+						<p>Background 背景</p>
 						<pre style="background-color: rgba(0, 0, 0, 0.5);"><code style="background-color: rgba(0, 0, 0, 0.2);">
 							<style>
 								p {
@@ -315,6 +324,208 @@
 						</code></pre>
 					</section>
 				</section>
+
+<!-- CSS浮动 -->
+				 <section>
+						<section>
+							<p>Float 浮动</p>
+							<div style="display: flex; justify-content: space-between;">
+								<pre><code>
+									<div style="margin: 0 25px;">
+										<div style="width: 100px; height: 100px; background-color: rgb(129, 127, 255);">没有浮动</div>
+										<div style="height:100%; background-color: rgb(0, 179, 255); "></div>
+									</div>
+									<div>
+										<div style="width: 100px; height: 100px; background-color: rgb(129, 127, 255); float: left;">起飞</div>
+										<div style="height:100%; background-color: rgb(0, 179, 255); "></div>
+									</div>
+								</code></pre>
+								<div style="margin: 0 25px;">
+									<div style="width: 100px; height: 100px; background-color: rgb(129, 127, 255);">没有浮动</div>
+									<div style="height:100%; background-color: rgb(0, 179, 255); "></div>
+								</div>
+								<div>
+									<div style="width: 100px; height: 100px; background-color: rgb(129, 127, 255); float: left;">起飞</div>
+									<div style="height:100%; background-color: rgb(0, 179, 255); "></div>
+								</div>
+							</div>
+						</section>
+
+						<section>
+							<p>清除浮动</p>
+							<pre><code>
+								<div style="background-color: blueviolet; margin-bottom: 10px;">
+									<div style="width: 90%; height: 80px; background-color: rgb(129, 127, 255);">没有浮动</div>
+								</div>
+								<div style="background-color: blueviolet; border: 1px solid blueviolet;">
+									<div style="width: 90%; height: 80px; background-color: rgb(129, 127, 255); float: left;">起飞</div>
+								</div>
+							</code></pre>
+							<div style="background-color: blueviolet; margin-bottom: 10px;">
+								<div style="width: 90%; height: 80px; background-color: rgb(129, 127, 255);">没有浮动</div>
+							</div>
+							<div style="background-color: blueviolet; border: 1px solid blueviolet;">
+								<div style="width: 90%; height: 80px; background-color: rgb(129, 127, 255); float: left;">起飞</div>
+							</div>
+						</section>
+
+						<section>
+							<p>清除浮动</p>
+							<ul>
+								<li>额外标签法（隔墙法</li>
+								<li>after伪元素法</li>
+								<li>双伪元素法</li>
+							</ul>
+						</section>
+				 </section>
+
+<!-- CSS定位 -->				
+				 <section>
+					<section>
+						<p>Position 定位</p>
+						<ul>
+							<li>静态定位 static</li>
+							<li>相对定位 relative</li>
+							<li>绝对定位 absolute</li>
+							<li>固定定位 fixed</li>
+						</ul>
+					</section>
+				 </section>
+
+<!-- CSS3 -->
+				 <section>
+					<p>CSS3</p>
+					<ul>
+						<li>Flex</li>
+						<li>Transition</li>
+						<li>Translate</li>
+						<li>animation</li>
+						<li>Selectors</li>
+					</ul>
+				 </section>
+
+<!-- Flex -->
+				 <section>
+						<section>
+							<p>Flex</p>
+							<ul>
+								<li>flex-direction</li>
+								<li style="color: pink;">justify-content</li>
+								<li>flex-wrap</li>
+								<li>align-content</li>
+							</ul>
+						</section>
+
+						<section>
+							<p>justify-content</p>
+							<p>center</p>
+							<div style="display: flex; justify-content: center; background-color: burlywood;">
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+							</div>
+							<p>space-around</p>
+							<div style="display: flex; justify-content: space-around; background-color: burlywood;">
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+							</div>
+							<p>space-between</p>
+							<div style="display: flex; justify-content: space-between; background-color: burlywood;">
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+								<div style="width: 50px;height: 50px; background-color: darkorchid;"></div>
+							</div>
+						</section>
+
+						<section>
+							<p>flex-wrap</p>
+							<p>nowrap width: 25%</p>
+							<div style="display: flex; justify-content: space-between; background-color: burlywood;">
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+							</div>
+							<p>wrap width: 25%</p>
+							<div style="display: flex; justify-content: space-between; flex-wrap: wrap; background-color: burlywood;">
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+								<div style="width: 25%;height: 50px;border: 1px solid greenyellow; background-color: darkorchid;"></div>
+							</div>
+						</section>
+				 </section>
+
+<!-- Transition -->
+				 <section>
+					<p>Transition 2D&3D</p>
+					<pre><code>
+						transition:要过渡的属性 花费时间 运动曲线 何时开始；
+						transition: all 2s;
+					</code></pre>
+					<div style="width: 200px; background-color: blueviolet;" onclick="this.style.backgroundColor = 'pink'; this.style.transform = 'translate(500px, 0)'">Normal</div>
+					<div style="width: 200px; transition: all 2s; background-color: blueviolet;" onclick="this.style.backgroundColor = 'pink'; this.style.transform = 'translate(500px, 0)'">Transition</div>
+				 </section>
+
+<!-- Animation -->
+				 <section>
+					<p>Animation</p>
+					<pre><code style="font-size: 15px;">
+						@keyframes move {
+							0% {
+								top: 0;
+								left: 0;
+							}
+							25% {
+								top: 0;
+								left: 150px;
+							}
+							50% {
+								top: 150px;
+								left: 150px;
+							}
+							75% {
+								top: 150px;
+								left: 0;
+							}
+							100% {
+								top: 0;
+								left: 0;
+							}
+						}
+						.box {
+							animation: move 2s infinite;
+						}
+					</code></pre>
+					<div class="animation">
+						<div class="box"></div>
+					</div>
+				 </section>
+
+<!-- Others -->
+				 <section>
+					<p>Others</p>
+					<ul>
+						<li>MDN</li>
+						<li>UI 库: element-ui</li>
+						<li>字体图标库: icomoon, iconfont</li>
+						<li style="color: pink">给孩子的Github点个Follow & Star √</li>
+						<li style="color: pink"> https://github.com/lxy-littlechai</li>
+					</ul>
+				 </section>
+
+				 <section>
+					Thanks for listening
+				 </section>
 			</div>
 		</div>
 
@@ -335,3 +546,38 @@
 		</script>
 	</body>
 </html>
+
+<style>
+  .animation {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000;
+    animation: move 2s infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      top: 0;left: 0;
+    }
+    25% {
+      top: 0;left: 150px;
+    }
+    50% {
+      top: 150px;left: 150px;
+    }
+    75% {
+      top: 150px;left: 0;
+    }
+    100% {
+      top: 0;left: 0;
+    }
+  }
+</style>
