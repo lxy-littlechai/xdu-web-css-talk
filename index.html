@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>xdu-web-talk</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,7 +16,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-<!-- 				CSS Video Introduction -->
+<!-- CSS Video Introduction -->
 				<section data-markdown>
 			  <script type="text/template">
 		    # What's CSS?
@@ -24,19 +24,19 @@
 			  </script>
 				</section>
 
-<!-- 				CSS的引入方式 -->
+<!-- CSS的引入方式 -->
 				<section>
 					<section>CSS的引入方式</section> 
 					<section>
 						行内样表式
-						<pre><code data-line-numbers="0">
+						<pre><code>
 							<div style="color: red;"></div>
 							</code></pre>
 					</section>
 
 					<section>
 						内部样表式
-						<pre><code data-line-numbers="0-5">
+						<pre><code>
 								<style>
 									div {
 										color: red;
@@ -47,19 +47,19 @@
 
 					<section>
 						外部样表式
-						<pre><code data-line-numbers="0">
+						<pre><code>
 							<link rel="stylesheet" href="css文件路径">
 							</code></pre>
 					</section>
 
 				</section>
 
-<!-- 			  CSS基础选择器 -->
+<!-- CSS基础选择器 -->
 				<section>
 					<section>CSS基础选择器</section>
 					<section>
 						标签选择器
-						<pre><code data-line-numbers="0">
+						<pre><code>
 							<style>
 								h1 {
 									color: red;
@@ -70,7 +70,7 @@
 					</section>
 					<section>
 						类选择器
-						<pre><code data-line-numbers="0">
+						<pre><code>
 							<div class="ClassName"></div>
 							<div class="ClassName"></div>
 							<style>
@@ -84,7 +84,7 @@
 					<section>
 						标签选择器 <br>
 						Only one
-						<pre><code data-line-numbers="0">
+						<pre><code>
 							<div id="myId"></div>
 							<style>
 								#myId {
@@ -96,7 +96,7 @@
 					</section>
 					<section>
 						通配符选择器
-						<pre><code data-line-numbers="0">
+						<pre><code>
 							<style>
 								* {
 									color: red;
@@ -116,31 +116,203 @@
 					</section>
 				</section>
 
-<!-- 				CSS复合选择器 -->
+<!-- CSS复合选择器 -->
 				<section>
 					<section>
-						<h3>复合选择器</h3>
-						<p>怎样选择B里的C?</p>
-						<pre><code data-line-numbers="0">
-							<div class="C"></div>
-							<div class="B">
-								<div class="C"></div>
-							</div>
-							</code></pre>
+						<p>复合选择器</p>
 					</section>
 					<section>
+						<h3>怎样只选择B里的C?</h3>
 						<p>后代选择器</p>
-						<pre><code data-line-numbers="0">
+						<pre><code>
+							<div class="C"></div>
 							<div class="B">
 								<div class="C"></div>
 							</div>
 					
 							<style>
 								.B .C{
-									
+									color: red;
 								}
 							</style>
 							</code></pre>
+					</section>
+					<section>
+						<h3>怎样只选择B里的C?</h3>
+						<p>子选择器</p>
+						<pre><code>
+							<div class="C"></div>
+							<div class="B">
+								<div class="C"></div>
+							</div>
+					
+							<style>
+								.B>div{
+									color: red;
+								}
+							</style>
+							</code></pre>
+					</section>
+					<section>
+						<h3>怎样选择两个C?</h3>
+						<p>并集选择器</p>
+						<pre><code>
+							<div class="C"></div>
+							<div class="B">
+								<div class="C"></div>
+							</div>
+					
+							<style>
+								.C,
+								.B .C{
+									color: red;
+								}
+							</style>
+							</code></pre>
+					</section>
+					<section>
+						<p onmouseover="this.style.color = 'red'" onmouseout="this.style.color='white'">伪类选择器</p>
+						<pre><code>
+							<div class="C"></div>
+					
+							<style>
+								a:link{}   		/*选择未被访问过的链接*/
+								a:visited{}		/*选择访问过的链接*/
+								a:hover{}			/*选择鼠标经过的链接*/
+								a:active{}		/*鼠标正在按下的链接*/
+							</style>
+							</code></pre>
+					</section>
+				</section>
+
+<!-- CSS字体属性 -->
+				<section>
+						<section>
+							<p style="
+							font-size: 25px;
+							font-weight: 600;
+							font-style: italic;">CSS字体属性</p>
+							<pre><code>
+								<style>
+									p {
+										font-family: 'Courier New', Courier, monospace;
+										font-size: 25px;
+										font-weight: 600;
+										font-style: italic;
+									}
+								</style>
+							</code></pre>
+						</section>
+				</section>
+
+<!-- CSS文本属性 -->				
+				<section>
+					<section>
+						<p style="
+									color: rgba(255, 192, 203, 0.921);
+									text-align: left;
+									text-decoration: underline;
+									text-indent: 10px;
+									line-height: 10px;
+						">CSS文本属性</p>
+						<pre><code>
+							<style>
+								p {
+									color: rgba(255, 192, 203, 0.921);
+									text-align: left;
+									text-decoration: underline;
+									text-indent: 10px;
+									line-height: 10px;
+								}
+							</style>
+						</code></pre>
+					</section>
+				</section>
+
+<!-- CSS背景 -->				
+				<section>
+					<section style="
+									background: url(./images/op.jpeg);
+									background-size: cover;
+									background-repeat: no-repeat;
+									background-position: 0 0;
+					">
+						<p>CSS背景</p>
+						<pre style="background-color: rgba(0, 0, 0, 0.5);"><code style="background-color: rgba(0, 0, 0, 0.2);">
+							<style>
+								p {
+									background-image: './images/op.jpeg';
+									background-size: cover;
+									background-repeat: no-repeat;
+									background-position: 0 0;
+								}
+							</style>
+						</code></pre>
+					</section>
+				</section>
+
+<!-- CSS盒子模型 -->
+				<section>
+					<section>
+						<p>盒子模型</p>
+						<ul>
+							<li>border 边框</li>
+							<li>content 内容</li>
+							<li>padding 内边距</li>
+							<li>margin 外边距</li>
+						</ul>
+					</section>
+					<section>
+						<p>Demo</p>
+						<div style="width: 200px;font-size: 15px; height: 200px; background-color: red; border: 2px solid black; padding: 15px;margin: auto;">
+							margin
+							<div style="height: 150px; background-color: blue; border: 2px solid black; padding: 15px; margin: auto;">
+								padding
+								<div style="height: 125px; background-color: green; border: 2px solid black;"></div>
+							</div>
+						</div>
+						
+					</section>
+					<section style="border: 1px solid pink; border-radius: 10px;">
+						<p>Border</p>
+						<pre><code>
+							<style>
+								p {
+									border: 1px solid pink;
+									/* border-style border-color */
+									border-radius: 10px;
+								}
+							</style>
+						</code></pre>
+					</section>
+
+					<section>
+						<p>Padding & Margin</p>
+						<pre><code>
+							<style>
+								p {
+									padding: top right bottom left;
+									padding-top: 1px;
+									margin: top right bottom left;
+									margin: 0 auto;
+								}
+							</style>
+						</code></pre>
+					</section>
+
+					<section>
+						<p style="
+							box-shadow: 5px 5px 5px 5px greenyellow;
+							text-shadow: 10px 10px 5px greenyellow;
+						">shadow</p>
+						<pre><code>
+							<style>
+								p {
+									box-shadow: h-shadow v-shadow blur spread color inset;
+									text-shadow: h-shadow v-shadow blur color;
+								}
+							</style>
+						</code></pre>
 					</section>
 				</section>
 			</div>
