@@ -16,7 +16,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-<!-- 				page1 -->
+<!-- 				CSS Video Introduction -->
 				<section data-markdown>
 			  <script type="text/template">
 		    # What's CSS?
@@ -24,9 +24,124 @@
 			  </script>
 				</section>
 
-<!-- 				page2 -->
+<!-- 				CSS的引入方式 -->
 				<section>
-					<img src="https://revealjs.com/images/slides-symbol-512x512.png" alt="image">
+					<section>CSS的引入方式</section> 
+					<section>
+						行内样表式
+						<pre><code data-line-numbers="0">
+							<div style="color: red;"></div>
+							</code></pre>
+					</section>
+
+					<section>
+						内部样表式
+						<pre><code data-line-numbers="0-5">
+								<style>
+									div {
+										color: red;
+									}
+								</style>
+							</code></pre>
+					</section>
+
+					<section>
+						外部样表式
+						<pre><code data-line-numbers="0">
+							<link rel="stylesheet" href="css文件路径">
+							</code></pre>
+					</section>
+
+				</section>
+
+<!-- 			  CSS基础选择器 -->
+				<section>
+					<section>CSS基础选择器</section>
+					<section>
+						标签选择器
+						<pre><code data-line-numbers="0">
+							<style>
+								h1 {
+									color: red;
+									font-size: 12px;
+								}
+							</style>
+							</code></pre>
+					</section>
+					<section>
+						类选择器
+						<pre><code data-line-numbers="0">
+							<div class="ClassName"></div>
+							<div class="ClassName"></div>
+							<style>
+								.ClassName {
+									color: red;
+									font-size: 12px;
+								}
+							</style>
+							</code></pre>
+					</section>
+					<section>
+						标签选择器 <br>
+						Only one
+						<pre><code data-line-numbers="0">
+							<div id="myId"></div>
+							<style>
+								#myId {
+									color: red;
+									font-size: 12px;
+								}
+							</style>
+							</code></pre>
+					</section>
+					<section>
+						通配符选择器
+						<pre><code data-line-numbers="0">
+							<style>
+								* {
+									color: red;
+									font-size: 12px;
+								}
+							</style>
+							</code></pre>
+					</section>
+					<section>
+						<p>优先级</p>
+						<ul>
+							<li>行内style</li>
+							<li>id选择器</li>
+							<li>class选择器</li>
+							<li>标签选择器</li>
+						</ul>
+					</section>
+				</section>
+
+<!-- 				CSS复合选择器 -->
+				<section>
+					<section>
+						<h3>复合选择器</h3>
+						<p>怎样选择B里的C?</p>
+						<pre><code data-line-numbers="0">
+							<div class="C"></div>
+							<div class="B">
+								<div class="C"></div>
+							</div>
+							</code></pre>
+					</section>
+					<section>
+						<p>后代选择器</p>
+						<pre><code data-line-numbers="0">
+							<div class="B">
+								<div class="C"></div>
+							</div>
+					
+							<style>
+								.B .C{
+									
+								}
+							</style>
+							</code></pre>
+					</section>
 				</section>
 			</div>
 		</div>
