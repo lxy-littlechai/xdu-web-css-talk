@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>xdu-web-talk</title>
+
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
@@ -14,11 +15,14 @@
 	</head>
 	<body>
 		<div style="background: url(./images/op.jpeg);display: none;"></div>
+		<img style="display: none;" src="./images/bilibili.png" alt="">
+
 		<div class="reveal">
 			<div class="slides">
 
 				<section>
 					<h1>CSS Introduction</h1>
+					<p>Speaker: 栾昕亚</p>
 					<p>Page: https://lxy-littlechai.github.io/xdu-web-css-talk/</p>
 				</section>
 
@@ -183,6 +187,11 @@
 						<p onmouseover="this.style.color = 'red'" onmouseout="this.style.color='white'">伪类选择器</p>
 						<pre><code>
 							<div class="C"></div>
+							<style>
+								.C:hover {
+									color: red;
+								}
+							</style>
 					
 							<style>
 								a:link{}   		/*选择未被访问过的链接*/
@@ -207,7 +216,7 @@
 										font-family: 'Courier New', Courier, monospace;
 										font-size: 25px;
 										font-weight: 600;
-										font-style: italic;
+										font-style:italic;
 									}
 								</style>
 							</code></pre>
@@ -218,7 +227,7 @@
 				<section>
 					<section>
 						<p style="
-									color: rgba(255, 192, 203, 0.921);
+									color: rgba(255, 192, 203, 0.921);/* #000000 */
 									text-align: left;
 									text-decoration: underline;
 									text-indent: 10px;
@@ -273,11 +282,11 @@
 					</section>
 					<section>
 						<p>Demo</p>
-						<div style="width: 200px;font-size: 15px; height: 200px; background-color: red; border: 2px solid black; padding: 15px;margin: auto;">
+						<div style="width: 200px;font-size: 15px; height: 200px; background-color: red; border: 2px solid white; padding: 15px;margin: auto;">
 							margin
-							<div style="height: 150px; background-color: blue; border: 2px solid black; padding: 15px; margin: auto;">
+							<div style="height: 150px; background-color: blue; padding: 15px; margin: auto;">
 								padding
-								<div style="height: 125px; background-color: green; border: 2px solid black;"></div>
+								<div style="height: 125px; background-color: rgb(25, 25, 25);"></div>
 							</div>
 						</div>
 						
@@ -317,6 +326,9 @@
 						<pre><code>
 							<style>
 								p {
+									box-shadow: 5px 5px 5px 5px greenyellow;
+									text-shadow: 10px 10px 5px greenyellow;
+
 									box-shadow: h-shadow v-shadow blur spread color inset;
 									text-shadow: h-shadow v-shadow blur color;
 								}
@@ -390,18 +402,220 @@
 							<li>固定定位 fixed</li>
 						</ul>
 					</section>
+					<section>
+						<img src="./images/bilibili.png" alt="">
+					</section>
 				 </section>
 
 <!-- CSS3 -->
 				 <section>
 					<p>CSS3</p>
 					<ul>
+						<li>Selectors</li>
+						<li>Box-sizing</li>
+						<li>Transform</li>
 						<li>Flex</li>
 						<li>Transition</li>
 						<li>Translate</li>
 						<li>animation</li>
-						<li>Selectors</li>
+						
 					</ul>
+				 </section>
+
+<!-- Selectors -->
+				 <section>
+					<section>
+						<p>Selectors</p>
+						<ul>
+							<li>属性选择器</li>
+							<li>结构伪类选择器</li>
+							<li>伪元素选择器</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>属性选择器</p>
+						<pre><code>
+							<input type="text" value = "请输入用户名"></input>
+							<div class="icon1"></div>
+							<style>
+								input[type=text] {}	/* 特定属性 */
+								/* 简单正则匹配 */
+								div[class^=icon]		/* 头部含有 */
+								div[class$=val]			/* 尾部含有 */
+								div[class*=val]			/* 含有 */
+							</style>
+							
+						</code></pre>
+					</section>
+
+					<section>
+						<p>结构伪类选择器</p>
+						<pre><code>
+							<style>
+								ul li:first-child
+								ul li:first-of-type
+
+								ul :last-child
+								ul li:last-of-type
+
+								/* n可以为数字、公式、关键字 */
+								ul div:nth-child(n) /* 对所有东西编号,再看是不是div */
+								ul div:nth-of-type()/* 先对所有div编号,再看第几个孩子 */
+								/* 关键字： even偶数 odd奇数 n从0开始自增*/
+
+								ul li:nth-child(odd){
+								    background-color: gray;
+								}
+								ul li:nth-child(2n+1){
+								    background-color: gray;
+								}
+							</style>
+						</code></pre>
+					</section>
+
+					<section>
+						<p class="fake-selector">伪元素选择器</p>
+						<pre><code>
+							<style>
+								.fake-selector::after {
+									content: 'after';
+									color: pink;
+								}
+								.fake-selector::before {
+									content: 'before';
+									color: greenyellow;
+								}
+							</style>
+						</code></pre>
+					</section>
+
+				 </section>
+
+<!-- box-sizing -->
+				 <section>
+					<section>
+						<p>box-sizing</p>
+						<pre><code>
+							<style>p{
+								box-sizing: content-box;/* 盒子大小为 width + padding + border 默认 */
+								box-sizing: border-box;/* 盒子大小为 width */
+							}</style>
+						</code></pre>
+					</section>
+				 </section>
+
+<!-- Transform -->
+				 <section>
+					<section>
+						<p>Transform</p>
+						<ul>
+							<li>2D</li>
+							<li>3D</li>
+						</ul>
+					</section>
+					
+					<section>
+						<p>Transform 2D</p>
+						<div style="display: flex;">
+							<pre><code>
+								<style>
+									div1 {
+										transform: rotate(45deg) translate(20px, 100px)  scale(1.5);
+									}
+									div2 {
+										transform: translate(20px, 200px) rotate(45deg) scale(1.5);
+									}
+									
+								</style>
+							</code></pre>
+							<div>
+								<div style="width: 50px; height: 50px; background-color: pink;"> </div>
+								<div style="width: 50px; height: 50px; background-color: rgb(192, 255, 248);transform: rotate(45deg) translate(20px, 100px)  scale(1.5);"></div>
+								<div style="width: 50px; height: 50px; background-color: pink;transform: translate(20px, 200px) rotate(45deg) scale(1.5);"></div>
+							</div>
+						</div>
+
+					</section>
+
+					<section>
+						<p>Transform 3D</p>
+							<pre><code>
+								<div class="cube">
+									<div class="front"></div>
+									<div class="back"></div>
+									<div class="top"></div>
+									<div class="bottom"></div>
+									<div class="left"></div>
+									<div class="right"></div>
+								</div>
+								<style>
+										.cube {
+  									  position: relative;
+  									  width: 200px;
+  									  height: 200px;
+  									  transform-style: preserve-3d;
+											perspective: 800px;
+  									  transform: rotateX(30deg) rotateY(45deg);
+  									}
+										.cube div {
+  									  position: absolute;
+  									  width: 200px;
+  									  height: 200px;
+  									  background-color: rgba(255, 255, 255, 0.8);
+  									  border: 2px solid #333;
+  									}
+  									.cube .front {
+  									  transform: translateZ(100px);
+  									  background-color: rgba(255, 0, 0, 0.76);
+  									}
+  									.cube .back {
+  									  transform: translateZ(-100px) rotateY(180deg);
+  									  background-color: #0f0;
+  									}
+  									.cube .top {
+  									  transform: rotateX(90deg) translateZ(100px);
+  									  background-color: #00f;
+  									}
+  									.cube .bottom {
+  									  transform: rotateX(-90deg) translateZ(100px);
+  									  background-color: rgba(255, 255, 0, 0.729);
+  									}
+  									.cube .left {
+  									  transform: rotateY(-90deg) translateZ(100px);
+  									  background-color: rgba(255, 0, 255, 0.692);
+  									}
+  									.cube .right {
+  									  transform: rotateY(90deg) translateZ(100px);
+  									  background-color: #0ff;
+  									}
+								</style>
+							</code></pre>
+
+						
+					</section>
+
+					<section>
+						<div style="display: flex; justify-content: space-around;">
+							<div class="cube">
+								<div class="front"></div>
+								<div class="back"></div>
+								<div class="top"></div>
+								<div class="bottom"></div>
+								<div class="left"></div>
+								<div class="right"></div>
+							</div>
+							<div class="cube" style="perspective: none;">
+								<div class="front"></div>
+								<div class="back"></div>
+								<div class="top"></div>
+								<div class="bottom"></div>
+								<div class="left"></div>
+								<div class="right"></div>
+							</div>
+						</div>
+						
+					</section>
 				 </section>
 
 <!-- Flex -->
@@ -548,6 +762,15 @@
 </html>
 
 <style>
+	.fake-selector::after {
+		content: 'after';
+		color: pink;
+	}
+	.fake-selector::before {
+		content: 'before';
+		color: greenyellow;
+	}
+
   .animation {
     position: relative;
     width: 200px;
@@ -563,6 +786,46 @@
     animation: move 2s infinite;
   }
   
+	.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+		perspective: 800px;
+    transform: rotateX(30deg) rotateY(45deg);
+  }
+  .cube div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #333;
+  }
+  .cube .front {
+    transform: translateZ(100px);
+    background-color: rgba(255, 0, 0, 0.76);
+  }
+  .cube .back {
+    transform: translateZ(-100px) rotateY(180deg);
+    background-color: #0f0;
+  }
+  .cube .top {
+    transform: rotateX(90deg) translateZ(100px);
+    background-color: #00f;
+  }
+  .cube .bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+    background-color: rgba(255, 255, 0, 0.729);
+  }
+  .cube .left {
+    transform: rotateY(-90deg) translateZ(100px);
+    background-color: rgba(255, 0, 255, 0.692);
+  }
+  .cube .right {
+    transform: rotateY(90deg) translateZ(100px);
+    background-color: #0ff;
+  }
+
   @keyframes move {
     0% {
       top: 0;left: 0;
